@@ -1,0 +1,321 @@
+/* --- reset (subset) --- */
+body, div, dl, dt, dd, ul, ol, li, pre, code, form, fieldset, legend, input, button, textarea, p, blockquote, th, td {
+	margin: 0;
+	padding: 0;
+}
+
+address, caption, cite, code, dfn, em, strong, th, var, optgroup {
+	font-style: inherit;
+	font-weight: inherit;
+}
+
+li {
+	list-style: none;
+	font-size: 12px;
+	letter-spacing: 0.06em;
+}
+
+caption, th {
+	text-align: left;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-size: 12px;
+	font-weight: normal;
+	margin: 0;
+	padding: 0;
+}
+
+q:before, q:after {
+	content: "";
+}
+
+img {
+	border: 0;
+	max-width: 100%;
+	height: auto;
+}
+
+/* --- base --- */
+html {
+	color: #828282;
+	height: 100%;
+}
+
+body {
+	font: 12px/1.231 courier, fixed-width, monospace;
+}
+
+#main {
+	background-color: transparent;
+}
+
+/* --- layout --- */
+#nav h1 {
+	width: 270px;
+}
+
+h1 {
+	font-family: courier, fixed-width, monospace;
+	letter-spacing: 0.06em;
+	margin: 40px 0 10px 40px;
+	font-size: 12px;
+}
+
+#general {
+	letter-spacing: 0.04em;
+	padding-bottom: 30px;
+	margin-left: 40px;
+}
+
+h3 {
+	letter-spacing: 0.06em;
+}
+
+#general h3 {
+	display: inline;
+	font-size: 12px;
+	margin-right: 10px;
+}
+
+#general h3 a:link {
+	height: 15px;
+	text-decoration: none;
+}
+
+#general h3 a:hover {
+	background: #1d1d1d;
+	color: #fff;
+	text-decoration: none;
+}
+
+/* framed “DOWNLOAD CV” in the nav bar — same grey as links, minimal height */
+#general h3.nav-cv-download {
+	display: inline-block;
+	vertical-align: baseline;
+	margin-right: 10px;
+	line-height: 1.231;
+}
+
+#general h3.nav-cv-download button.nav-cv-download-btn {
+	-webkit-appearance: none;
+	appearance: none;
+	box-sizing: border-box;
+	display: inline-block;
+	margin: 0;
+	padding: 1px 9px 2px;
+	border: 1px solid #b0b0b0;
+	color: #828282;
+	background: transparent;
+	letter-spacing: 0.06em;
+	line-height: 1.231;
+	height: auto;
+	min-height: 0;
+	font: inherit;
+	font-size: 12px;
+	font-family: courier, fixed-width, monospace;
+	cursor: pointer;
+	box-shadow: none;
+	vertical-align: baseline;
+}
+
+#general h3.nav-cv-download button.nav-cv-download-btn:hover:not(:disabled) {
+	background: #1d1d1d;
+	color: #fff;
+	border-color: #1d1d1d;
+	box-shadow: none;
+}
+
+#general h3.nav-cv-download button.nav-cv-download-btn:disabled {
+	opacity: 0.55;
+	cursor: wait;
+	color: #828282;
+}
+
+/* current page (body.cv-* set per HTML file) */
+body.cv-contact #general h3 a[href="contact.html"],
+body.cv-about #general h3 a[href="about.html"],
+body.cv-achievements #general h3 a[href="achievements.html"],
+body.cv-skills #general h3 a[href="skills.html"],
+body.cv-experience #general h3 a[href="experience.html"],
+body.cv-other #general h3 a[href="other.html"] {
+	text-decoration: underline;
+}
+
+/* --- links --- */
+a:link,
+a:visited {
+	color: #828282;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #828282;
+	text-decoration: underline;
+}
+
+h1 a:link,
+h1 a:visited {
+	color: #000;
+}
+
+h1 a:hover {
+	text-decoration: none;
+}
+
+/* --- main column --- */
+.info-content {
+	margin-left: 120px;
+	width: 500px;
+	max-width: calc(100vw - 140px);
+	box-sizing: border-box;
+	letter-spacing: 0.04em;
+}
+
+@media (max-width: 700px) {
+	h1 {
+		margin-left: 20px;
+	}
+
+	#general {
+		margin-left: 20px;
+	}
+
+	.info-content {
+		margin-left: 20px;
+		width: auto;
+		max-width: calc(100vw - 40px);
+		padding-right: 16px;
+	}
+
+	.info-content .contact-with-photo {
+		flex-direction: column;
+		align-items: stretch;
+	}
+
+	.info-content .contact-photo-col {
+		align-self: center;
+		margin-top: 12px;
+	}
+
+	#general h3.nav-cv-download button.nav-cv-download-btn {
+		padding: 1px 8px 2px;
+		letter-spacing: 0.05em;
+	}
+}
+
+/* --- contact page: text left, photo right --- */
+.info-content .contact-with-photo {
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: 20px;
+}
+
+.info-content .contact-text-col {
+	flex: 1;
+	min-width: 0;
+}
+
+.info-content .contact-photo-col {
+	flex: 0 0 auto;
+}
+
+.info-content .contact-profile-photo {
+	display: block;
+	width: 168px;
+	height: 168px;
+	max-width: 168px;
+	object-fit: cover;
+	object-position: center center;
+	border-radius: 3px;
+}
+
+/* --- shared CV section titles (page lead headings) --- */
+.info-content .info-section-heading {
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+.info-content .info-paragraph {
+	line-height: 22px;
+	margin-bottom: 14px;
+}
+
+.info-content .info-paragraph:last-child {
+	margin-bottom: 0;
+}
+
+.info-content .achievement-bullet {
+	line-height: 22px;
+	margin-bottom: 8px;
+}
+
+.info-content .achievement-bullet:last-child {
+	margin-bottom: 0;
+}
+
+.info-content strong {
+	font-weight: bold;
+}
+
+/* --- experience --- */
+.info-content .experience-job {
+	margin-bottom: 22px;
+}
+
+.info-content .experience-job:last-child {
+	margin-bottom: 0;
+}
+
+.info-content .experience-headline {
+	font-weight: bold;
+	margin-bottom: 3px;
+}
+
+.info-content .experience-dates {
+	margin-bottom: 8px;
+}
+
+.info-content .experience-bullet {
+	line-height: 22px;
+	margin-bottom: 6px;
+}
+
+.info-content .experience-tech {
+	line-height: 22px;
+	margin-top: 6px;
+}
+
+/* --- skills --- */
+.info-content .skill-group {
+	margin-bottom: 16px;
+}
+
+.info-content .skill-group:last-child {
+	margin-bottom: 0;
+}
+
+.info-content .skill-topic {
+	font-weight: bold;
+	margin-bottom: 3px;
+}
+
+.info-content .skill-keywords {
+	line-height: 22px;
+}
+
+/* --- other page --- */
+.info-content .other-line {
+	line-height: 22px;
+	margin-bottom: 4px;
+}
+
+.info-content .other-line:last-child {
+	margin-bottom: 0;
+}
+
+.info-content .other-block-spacer {
+	margin-top: 22px;
+}
