@@ -26,18 +26,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      # --- OPTIONAL BUILD STEPS ---
-      # Un-comment and adjust if you use Node.js/npm/yarn/pnpm:
-      # - name: Setup Node
-      #   uses: actions/setup-node@v4
-      #   with:
-      #     node-version: 20
-      # - name: Install Dependencies & Build
-      #   run: |
-      #     npm install
-      #     npm run build
-      # ----------------------------
-
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
