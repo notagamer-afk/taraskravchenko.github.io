@@ -8,7 +8,7 @@
     var day = String(d.getDate());
     if (m.length === 1) m = "0" + m;
     if (day.length === 1) day = "0" + day;
-    return "CV_Oleksii_Khoriev_" + y + "-" + m + "-" + day + ".pdf";
+    return "CV_Taras_Kravchenko_" + y + "-" + m + "-" + day + ".pdf";
   }
 
   function loadDocument(path) {
@@ -43,7 +43,7 @@
     var header = document.createElement("header");
     header.className = "cv-pdf-header";
     var h1 = document.createElement("h1");
-    h1.textContent = "OLEKSII KHORIEV";
+    h1.textContent = "Taras Kravchenko";
     var sub = document.createElement("p");
     sub.textContent = "Senior DevOps / SRE / Platform Engineer";
     header.appendChild(h1);
